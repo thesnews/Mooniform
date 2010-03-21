@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+	<link rel="stylesheet" href="css/uniform.default.css" type="text/css" media="screen" charset="utf-8" />
+	<script type="text/javascript" src="http://www.google.com/jsapi?key="></script>
+	<script type="text/javascript">
+		google.load("mootools", "1.2.4");
+	</script>
+	<script type="text/javascript" src="mootools.mooniform.js"></script>
+	<script type="text/javascript">
+		document.addEvent( 'domready', function() {
+			new Mooniform( 'select, input[type=checkbox], input[type=radio], input[type=file]' );
+		});
+	</script>
+</head>
+<body>
+
+<form method="post">
+
+	<fieldset>
+		<label for="text_input">Text Input</label>
+		<input type="text" id="text_input" />
+	</fieldset>
+	
+	<fieldset>
+		<label for="file_input">File Input</label>
+		<input type="file" id="file_input" />
+	</fieldset>
+
+	<fieldset>
+		<label for="file_input_disabled">File Input DISABLED</label>
+		<input type="file" id="file_input_disabled" disabled="disabled" />
+	</fieldset>
+	
+	<fieldset>
+		<select>
+			<option>Option 1</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+		</select>
+	</fieldset>
+
+
+	<fieldset>
+		<select disabled="disabled">
+			<option>Option 1 disabled</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<label for="checkbox1">Checkbox 1</label>
+		<input type="checkbox" id="checkbox1" />
+		<br /><br />
+		<label for="checkbox2">Checkbox 2 disabled</label>
+		<input type="checkbox" id="checkbox2" disabled="disabled" />
+		<br /><br />
+		<label for="checkbox3">Checkbox 3</label>
+		<input type="checkbox" id="checkbox3" />
+	</fieldset>
+
+	<fieldset>
+		<label for="radio1">radio 1</label>
+		<input type="radio" id="radio1" name="foo" />
+		<br /><br />
+		<label for="radio2">radio 2 disabled</label>
+		<input type="radio" id="radio2" name="foo" disabled="disabled" />
+		<br /><br />
+		<label for="radio3">radio 3</label>
+		<input type="radio" id="radio3" name="foo" />
+	</fieldset>
+
+	<fieldset>
+		<label for="radio4">radio 1</label>
+		<input type="radio" id="radio4" name="bar" />
+		<br /><br />
+		<label for="radio5">radio 2</label>
+		<input type="radio" id="radio5" name="bar" />
+		<br /><br />
+		<label for="radio6">radio 3</label>
+		<input type="radio" id="radio6" name="bar" />
+	</fieldset>
+
+	<hr />
+	
+	<input type="submit" value="Submit" />
+
+</form>
+
+
+
+
+</body>
+</html>

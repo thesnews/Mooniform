@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+	<link rel="stylesheet" href="uniform/css/uniform.default.css" type="text/css" media="screen" charset="utf-8" />
+	<script type="text/javascript" src="http://www.google.com/jsapi?key="></script>
+	<script type="text/javascript">
+		google.load("jquery", "1.4.2");
+	</script>
+	<script type="text/javascript" src="uniform/jquery.uniform.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("select, input:checkbox, input:radio, input:file").uniform();		
+		});
+	</script>
+</head>
+<body>
+
+<form method="post">
+
+	<fieldset>
+		<label for="text_input">Text Input</label>
+		<input type="text" id="text_input" />
+	</fieldset>
+	
+	<fieldset>
+		<label for="file_input">File Input</label>
+		<input type="file" id="file_input" />
+	</fieldset>
+	
+	<fieldset>
+		<select>
+			<option>Option 1</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<label for="checkbox1">Checkbox 1</label>
+		<input type="checkbox" id="checkbox1" />
+		<br /><br />
+		<label for="checkbox2">Checkbox 2</label>
+		<input type="checkbox" id="checkbox2" />
+		<br /><br />
+		<label for="checkbox3">Checkbox 3</label>
+		<input type="checkbox" id="checkbox3" />
+	</fieldset>
+
+	<fieldset>
+		<label for="radio1">radio 1</label>
+		<input type="radio" id="radio1" />
+		<br /><br />
+		<label for="radio2">radio 2</label>
+		<input type="radio" id="radio2" />
+		<br /><br />
+		<label for="radio3">radio 3</label>
+		<input type="radio" id="radio3" />
+	</fieldset>
+</form>
+
+</body>
+</html>

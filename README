@@ -1,4 +1,4 @@
-Mooniform
+<h2>Mooniform</h2>
 
 A MooTools implementation of Pixelmatrix Design's jQuery plugin
 Uniform.
@@ -6,6 +6,65 @@ Uniform.
 A more-or-less direct port of Uniform v1.5
 
 Mooniform uses the exact same CSS and image sprite files as Uniform.
+
+Element.mooniform( [options] )
+Elements.mooniform( [options] )
+
+Usage:
+
+<pre>	
+document.addEvent( 'domready', function() {
+	$$( 'select, input[type=checkbox], input[type=radio], input[type=file]' ).mooniform();
+});
+</pre>
+
+Mooniform doesn't automatically know when you've updated a value by means
+other than direct select (i.e. you've changed the value with some 
+javascript). In that case you'll need to call the 'updateAll' static:
+
+<pre>
+function() {
+	$('foo').value = 'Bark';
+	Mooniform.updateAll();
+}
+</pre>
+
+Options:
+<ul>
+	<li>selectClass (string) class for select boxes</li>
+	<li>radioClass (string) class for radio inputs</li>
+	<li>checkboxClass (string) class for checkbox inputs</li>
+	<li>fileClass (string) class for file inputs</li>
+	<li>filenameClass (string) class for filename descriptor</li>
+	<li>fileBtnClass (string) class for add file button</li>
+	<li>fileDefaultText (string) default text for file box</li>
+	<li>fileBtnText (string) text for add file button</li>
+	<li>checkedClass (string) checked class for radios and checkboxes</li>
+	<li>focusClass (string) focused class</li>
+	<li>disabledClass (string) disabled class</li>
+	<li>activeClass (string) active class</li>
+	<li>hoverClass (string) hover class</li>
+	<li>useID (bool) attach element ID to styled container</li>
+	<li>idPrefix (string) prefix text for IDs when above flag is true</li>
+</ul>
+
+Class Methods:
+<ul>
+	<li>void updateAll( void ) - Updates value and state of all styled
+		elements</li>
+	<li>void resetAll( void ) - Resets value and state back to default</li>
+</ul>
+
+Instance Methods:
+<ul>
+	<li>void stylize( void ) - Style element, attach proper events</li>
+	<li>void update( void ) - Update value and state</li>
+	<li>void reset( void ) - Reset to default value and state</li>
+</ul>
+
+Disabling text selection is based on jQuery noSelect plugin by
+Mathias Bynens <http://mathiasbynens.be/>
+<http://github.com/mathiasbynens/noSelect-jQuery-Plugin>
 
 Uniform is Copyright 2009 Josh Pyles / Pixelmatrix Design LLC
 http://pixelmatrixdesign.com
@@ -17,13 +76,7 @@ Requires: Mootools 1.2.4+
 
 Author: mike joseph <josephm5@msu.edu>
 
-License: MIT License <http://www.opensource.org/licenses/mit-license.php>
+License:
+MIT License - http://www.opensource.org/licenses/mit-license.php
 
-Usage:
-
-document.addEvent( 'domready', function() {
-	new Mooniform( 'select, input[type=checkbox], input[type=radio], input[type=file]' );
-});
-
-For checkout purposes, make sure you use git clone --recursive to grab a copy of Uniform.
 

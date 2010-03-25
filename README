@@ -24,3 +24,6 @@ Usage:
 document.addEvent( 'domready', function() {
 	new Mooniform( 'select, input[type=checkbox], input[type=radio], input[type=file]' );
 });
+
+For checkout purposes, make sure you use git clone --recursive to grab a copy of Uniform.
+

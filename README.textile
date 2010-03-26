@@ -7,6 +7,8 @@ A more-or-less direct port of Uniform v1.5
 
 Mooniform uses the exact same CSS and image sprite files as Uniform.
 
+Mooniform 1.0
+
 <pre>Element.mooniform( [options] )</pre>
 <pre>Elements.mooniform( [options] )</pre>
 

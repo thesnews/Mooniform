@@ -1,74 +1,73 @@
-	h1. Mooniform
-	
-	A MooTools implementation of Pixelmatrix Design's jQuery plugin
-	Uniform.
-	
-	A more-or-less direct port of Uniform v1.5
+h2. Mooniform
 
-	Mooniform uses the exact same CSS and image sprite files as Uniform.
-	
-	Element.mooniform( [options] )
-	Elements.mooniform( [options] )
+A MooTools implementation of Pixelmatrix Design's jQuery plugin
+Uniform.
 
-	Usage:
+A more-or-less direct port of Uniform v1.5
 
-	<pre>	
-	document.addEvent( 'domready', function() {
-		$$( 'select, input[type=checkbox], input[type=radio], input[type=file]' ).mooniform();
-	});
-	</pre>
-	
-	Mooniform doesn't automatically know when you've updated a value by means
-	other than direct select (i.e. you've changed the value with some 
-	javascript). In that case you'll need to call the 'updateAll' static:
-	
-	<pre>
-	function() {
-		$('foo').value = 'Bark';
-		Mooniform.updateAll();
-	}
-	</pre>
+Mooniform uses the exact same CSS and image sprite files as Uniform.
 
-	Options:
-	 - selectClass (string) class for select boxes
-	 - radioClass (string) class for radio inputs
-	 - checkboxClass (string) class for checkbox inputs
-	 - fileClass (string) class for file inputs
-	 - filenameClass (string) class for filename descriptor
-	 - fileBtnClass (string) class for add file button
-	 - fileDefaultText (string) default text for file box
-	 - fileBtnText (string) text for add file button
-	 - checkedClass (string) checked class for radios and checkboxes
-	 - focusClass (string) focused class
-	 - disabledClass (string) disabled class
-	 - activeClass (string) active class
-	 - hoverClass (string) hover class
-	 - useID (bool) attach element ID to styled container
-	 - idPrefix (string) prefix text for IDs when above flag is true
-	
-	Class Methods:
-	 - void updateAll( void ) - Updates value and state of all styled elements
-	 - void resetAll( void ) - Resets value and state back to default
-	
-	Instance Methods:
-	 - void stylize( void ) - Style element, attach proper events
-	 - void update( void ) - Update value and state
-	 - void reset( void ) - Reset to default value and state
-	
-	Disabling text selection is based on jQuery noSelect plugin by
-	Mathias Bynens <http://mathiasbynens.be/>
-	<http://github.com/mathiasbynens/noSelect-jQuery-Plugin>
+<pre>Element.mooniform( [options] )</pre>
+<pre>Elements.mooniform( [options] )</pre>
 
-	Uniform is Copyright 2009 Josh Pyles / Pixelmatrix Design LLC
-	http://pixelmatrixdesign.com
-	
-	Mooniform is Copyright 2010 The State News, INC
-	http://statenews.com
+Usage:
 
-	Requires: Mootools 1.2.4+	
+<pre>	
+document.addEvent( 'domready', function() {
+	$$( 'select, input[type=checkbox], input[type=radio], input[type=file]' ).mooniform();
+});
+</pre>
 
-	Author: mike joseph <josephm5@msu.edu>
+Mooniform doesn't automatically know when you've updated a value by means
+other than direct select (i.e. you've changed the value with some 
+javascript). In that case you'll need to call the 'updateAll' static:
 
-	License:
-	MIT License - http://www.opensource.org/licenses/mit-license.php
+<pre>
+function() {
+	$('foo').value = 'Bark';
+	Mooniform.updateAll();
+}
+</pre>
 
+Options:
+ - selectClass (string) class for select boxes
+ - radioClass (string) class for radio inputs
+ - checkboxClass (string) class for checkbox inputs
+ - fileClass (string) class for file inputs
+ - filenameClass (string) class for filename descriptor
+ - fileBtnClass (string) class for add file button
+ - fileDefaultText (string) default text for file box
+ - fileBtnText (string) text for add file button
+ - checkedClass (string) checked class for radios and checkboxes
+ - focusClass (string) focused class
+ - disabledClass (string) disabled class
+ - activeClass (string) active class
+ - hoverClass (string) hover class
+ - useID (bool) attach element ID to styled container
+ - idPrefix (string) prefix text for IDs when above flag is true
+
+Class Methods:
+ - void updateAll( void ) - Updates value and state of all styled elements
+ - void resetAll( void ) - Resets value and state back to default
+
+Instance Methods:
+ - void stylize( void ) - Style element, attach proper events
+ - void update( void ) - Update value and state
+ - void reset( void ) - Reset to default value and state
+
+Disabling text selection is based on jQuery noSelect plugin by
+Mathias Bynens <"http://mathiasbynens.be/":http://mathiasbynens.be/>
+<"http://github.com/mathiasbynens/noSelect-jQuery-Plugin":http://github.com/mathiasbynens/noSelect-jQuery-Plugin>
+
+Uniform is Copyright 2009 Josh Pyles / Pixelmatrix Design LLC
+<"http://pixelmatrixdesign.com":http://pixelmatrixdesign.com>
+
+Mooniform is Copyright 2010 The State News, INC
+<"http://statenews.com":http://statenews.com>
+
+Requires: Mootools 1.2.4+	
+
+Author: mike joseph <"josephm5@msu.edu":josephm5@msu.edu>
+
+License:
+MIT License - http://www.opensource.org/licenses/mit-license.php

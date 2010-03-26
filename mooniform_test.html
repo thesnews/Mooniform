@@ -10,8 +10,68 @@
 	<script type="text/javascript" src="mootools.mooniform.js"></script>
 	<script type="text/javascript">
 		document.addEvent( 'domready', function() {
-			new Mooniform( 'select, input[type=checkbox], input[type=radio], input[type=file]' );
+
+			// group
+		
+			$$( 'form select, form input[type=checkbox], form input[type=radio], form input[type=file]' ).mooniform();
+
+			// single element
+			
+			$('single').mooniform();
+
+			// dynamic updating
+			$$('#update-select, #update-check, #update-check-disabled').mooniform();
+			$('update').addEvent( 'click', function(e) {
+				var selectBox = $('update-select');
+				var checkBox = $('update-check');
+				var checkBoxDisabled = $('update-check-disabled');
+				
+				switch( selectBox.value.toInt() ) {
+					case 1:
+						selectBox.value = 2;
+						break;
+					case 2:
+						selectBox.value = 3;
+						break;
+					case 3:
+						selectBox.value = 1;
+						break;
+				}
+				
+				if( checkBox.get( 'checked' ) ) {
+					checkBox.set( 'checked', false );
+				} else {
+					checkBox.set( 'checked', true );
+				}
+				
+				if( checkBoxDisabled.get( 'disabled' ) ) {
+					checkBoxDisabled.set( 'disabled', false );
+				} else {
+					checkBoxDisabled.set( 'disabled', true );
+				}
+				
+				Mooniform.updateAll();
+			});
+
+			// dynamic inject
+			$('inject').addEvent( 'click', function() {
+				
+				new Element( 'input', {
+					'type': 'file'
+				}).inject( this.getParent(), 'top' ).mooniform();
+				
+			});
+			
+			// reset
+			$('resetAll').addEvent( 'click', function() {
+				Mooniform.resetAll();
+			});
+
 		});
+		
+	
+		
+		
 	</script>
 </head>
 <body>
@@ -85,12 +145,48 @@
 
 	<hr />
 	
-	<input type="submit" value="Submit" />
+	<input type="button" value="Reset" id="resetAll" />
 
 </form>
 
+<hr />
+
+<div>
+	Single Element<br />
+	
+	<input id="single" type="file" value="Hello World" />
+</div>
 
 
+<hr style="clear:both;" />
+
+<div>
+	Dynamic Updating<br />
+	
+	<select id="update-select">
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
+	
+	<br style="clear:both;">
+	
+	<input type="checkbox" id="update-check" /> Checkbox
+
+	<br style="clear:both;">
+
+	<input type="checkbox" id="update-check-disabled" disabled="disabled" /> Checkbox Disabled
+	
+	<input type="button" id="update" value="Update" />
+</div>
+
+<hr style="clear:both;" />
+
+<div>
+
+	<br />
+	<input type="button" id="inject" value="Inject" />
+</div>
 
 </body>
 </html>

@@ -186,7 +186,14 @@
 						break;
 					case 'checkbox':
 					case 'radio':
-						this._element.fireEvent( 'click' );
+//						this._element.fireEvent( 'click' );
+						if( !this._element.get('checked') ) {
+							this._element.getParent().removeClass(
+								this._options.get('checkedClass'));
+						} else {
+							this._element.getParent().addClass(
+								this._options.get('checkedClass'));
+						}
 						break;
 				}
 				
